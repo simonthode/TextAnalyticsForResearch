@@ -35,6 +35,6 @@ Word_frequency(text_df, "text", freq = 50)
 Bigram_frequency(text_df, "text", freq = 10)
 
 #Produce network graph of the text
-create_network_graph(data = text_df, column = "text", search_term = "*", filter = 15, graph_type = "g1")
+create_network_graph(data = text_df, column = "text", search_term = "*", filter = 15, graph_type = "g2")
 
 

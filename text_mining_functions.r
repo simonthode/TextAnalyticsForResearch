@@ -137,7 +137,8 @@ create_network_graph <- function(data = text_df, column = "text", search_term = 
     g1 <- ggraph(bigram_graph, layout = "fr") +
       geom_edge_link(aes(label = n),
                      edge_colour = "royalblue",
-                     angle_calc = "along") +
+                     angle_calc = "along"
+                     ) +
       geom_node_point(size = 5) +
       geom_node_text(aes(label = name),
                      vjust = 1,
@@ -164,9 +165,10 @@ create_network_graph <- function(data = text_df, column = "text", search_term = 
       geom_edge_link(aes(edge_alpha = n, label = n),
                      show.legend = FALSE,
                      arrow = a,
-                     end_cap = circle(.07, 'inches')) +
+                     end_cap = circle(.07, 'inches'),
+                     angle_calc = "along") +
       geom_node_point(color = "lightblue", size = 5) +
-      geom_node_text(aes(label = name), vjust = 1, hjust = 1, size = 6) +
+      geom_node_text(aes(label = name), vjust = 1, hjust = 1, size = 4, repel = TRUE) +
       theme_void()
     
     return(g2)
