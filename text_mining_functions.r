@@ -216,7 +216,7 @@ word_vector_function <- function(data = text_df) {
 }
 
 
-
+# 5) Creates a vector output of related words using a calculated term applied to the word vectors created in word_vector_function 
 vector_output <- function(Terms, word_vectors) {
   
   cosine_similarity <- sim2(x = word_vectors, y = Terms, method = "cosine", norm = "l2")
