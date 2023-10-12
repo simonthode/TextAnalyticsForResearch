@@ -38,3 +38,15 @@ Bigram_frequency(text_df, "text", freq = 10)
 create_network_graph(data = text_df, column = "text", search_term = "*", filter = 15, graph_type = "g2")
 
 
+# Produce a vector corpus
+word_vectors <- word_vector_function(data = text_df)
+
+
+Term = word_vectors["nineteenth", , drop = F] + 
+  word_vectors["physics", , drop = F] -
+  word_vectors["eighteenth", , drop = F] -
+  word_vectors["seventeenth", , drop = F]
+
+
+vector_output(Term, word_vectors)
+  

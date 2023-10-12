@@ -23,6 +23,7 @@ library(stopwords)
 library(ggraph)
 library(ggplot2)
 library(igraph)
+library(text2vec)
 
 
 #Set up a remove_words vector - removes stopwords
@@ -215,6 +216,16 @@ word_vector_function <- function(data = text_df) {
 }
 
 
+
+vector_output <- function(Terms, word_vectors) {
+  
+  cosine_similarity <- sim2(x = word_vectors, y = Terms, method = "cosine", norm = "l2")
+  
+  Related_Words <- head(sort(cosine_similarity[,1], decreasing = TRUE), 10) %>% as.data.frame()
+  
+  return(Related_Words)
+  
+}
 
 
 
